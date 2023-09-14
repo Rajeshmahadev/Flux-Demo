@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment
-  namespace: flux-system
+  name: nginx-deployment
 spec:
-  replicas: 2
+  replicas: 3  # Number of Nginx replicas
   selector:
     matchLabels:
-      app: my-deploy
+      app: nginx
   template:
     metadata:
       labels:
-        app: my-deploy
+        app: nginx
     spec:
       containers:
-      - name: pod
-        image: rajesh072/react-calculator
-        ports:
-        - containerPort: 3000
+        - name: nginx-container
+          image: nginx:latest  # Use the latest Nginx image
+          ports:
+            - containerPort: 80
