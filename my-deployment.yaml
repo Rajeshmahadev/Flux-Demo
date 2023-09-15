@@ -4,7 +4,7 @@ metadata:
   name: nginx-deployment
   namespace: flux-system
 spec:
-  replicas: 3  # Number of Nginx replicas
+  replicas: 1  # Number of Nginx replicas
   selector:
     matchLabels:
       app: nginx
